@@ -24,7 +24,7 @@ describe('Reader Module', () => {
   it('should callback with file contents of one file', (done) => {
     const expected = 'I like tacos.';
     reader([__dirname + '/../data/taco.txt'], (err, data) => {
-      expect(err).not.toBeNull();
+      expect(err).toBeNull();
       const actual = data.toString();
       expect(actual).toBe(expected);
       done();
@@ -38,9 +38,8 @@ describe('Reader Module', () => {
     let expected, actual;
     reader(paths, (err, data) => {
       expected = 'I like taco pizza.';
-      expect(err).not.toBeNull();
+      expect(err).toBeNull();
       actual = data[0];
-      console.log(actual);
       expect(actual).toBe(expected);
 
       expected = 'I like tacos.';
