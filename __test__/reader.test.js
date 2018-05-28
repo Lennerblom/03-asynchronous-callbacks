@@ -15,7 +15,7 @@ describe('Reader Module', () => {
   });
 
   it('should callback with error for any non-existant file', (done) => {
-    reader([__dirname + '/../data/tacos.txt', 'missing.txt'], (err) => {
+    reader([__dirname + '/../data/taco.txt', 'missing.txt'], (err) => {
       expect(err).not.toBeNull();
 
       done();
